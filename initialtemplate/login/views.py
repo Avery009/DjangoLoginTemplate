@@ -5,13 +5,13 @@ from django.template import loader
 # Create your views here.
 
 def login(request):
-	if requests.method == 'GET':
-		form = forms.loginForm()
+	if request.method == 'GET':
+		form = forms.LoginForm()
 		template = loader.get_template('loginForm.html')
 		context = {
 			'form' : form,
 		}
-	elif requests.method == 'POST':
+	elif request.method == 'POST':
                 template = loader.get_template('index.html')
                 context = {}
 	else:
